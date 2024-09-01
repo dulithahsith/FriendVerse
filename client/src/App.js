@@ -1,18 +1,21 @@
 import React from 'react';
-import {Container, AppBar, Typography, Grow, Grid} from '@mui/material';
+import {Box,Container, AppBar, Typography, Grow, Grid} from '@mui/material';
 
 import Posts from './components/Posts/posts';
 import Form from './components/Form/Form';
 import FriendVerse from './images/FriendVerse.png';
-
+import useStyles from './styles';
 
 const App = () => {
+    const classes = useStyles();
     return (
         <Container maxWidth ="lg">
-            <AppBar position ="static" color="inherit">
-                <Typography variant ="h2" align= "center">FriendVerse</Typography>
-                <img src={FriendVerse} alt="memories" height="60" />
-            </AppBar> 
+           <AppBar className={classes.appBar} position="static" color="inherit" sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 16px' }}>
+            <Typography className={classes.heading} variant="h2" align="center" sx={{ flex: 1 }}>
+                FriendsVerse
+            </Typography>
+            <Box component="img" src={FriendVerse} alt="Friendsverse" sx={{ height: 150, width: 150 }} />
+        </AppBar>
             <Grow in>
                 <Container>
                     <Grid container justify ="space-between" alignItems="stretch" spacing= {3} >
